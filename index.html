@@ -489,17 +489,33 @@
 
         if (btnLicenses && btnConsulting && licensesContent && consultingContent) {
             btnLicenses.addEventListener('click', () => {
+                if (btnLicenses.classList.contains('active')) return;
+
                 btnLicenses.classList.add('active');
                 btnConsulting.classList.remove('active');
-                licensesContent.style.display = 'grid';
+
                 consultingContent.style.display = 'none';
+                licensesContent.style.display = 'grid';
+
+                // Trigger animation
+                licensesContent.classList.remove('animate-in');
+                void licensesContent.offsetWidth; // Force reflow
+                licensesContent.classList.add('animate-in');
             });
 
             btnConsulting.addEventListener('click', () => {
+                if (btnConsulting.classList.contains('active')) return;
+
                 btnConsulting.classList.add('active');
                 btnLicenses.classList.remove('active');
+
                 licensesContent.style.display = 'none';
                 consultingContent.style.display = 'grid';
+
+                // Trigger animation
+                consultingContent.classList.remove('animate-in');
+                void consultingContent.offsetWidth; // Force reflow
+                consultingContent.classList.add('animate-in');
             });
         }
     </script>
