@@ -16,16 +16,22 @@ As a tool designed for enterprise process management, its landing page is built 
 - **High Performance:** Optimized for fast First Contentful Paint (FCP) and near-instant interaction.
 - **Responsive Design:** Fluid layout that adapts seamlessly across mobile, tablet, and desktop viewports.
 - **Native Animations:** Scroll-triggered "fade-up" animations powered by the browser's native `IntersectionObserver` API for jank-free performance.
+- **SEO & i18n:** Fully optimized with Open Graph tags, canonical URLs, a sitemap, and static file duplication for English (`/`) and Spanish (`/es/`) to ensure perfect search engine indexing.
 
 ## 📁 Repository Structure
 
 ```text
 .
-├── index.html          # Main landing page entry point
+├── index.html          # Main landing page (English)
+├── es/
+│   └── index.html      # Spanish translation
+├── robots.txt          # SEO crawler instructions
+├── sitemap.xml         # Search engine sitemap
 ├── styles/
-│   └── styles.css      # Modular CSS (variables, resets, components, responsive rules)
-└── assets/             # Logos, favicons, and other static imagery
+│   └── styles.css      # Shared CSS
+└── assets/             # Logos, favicons, Open Graph image
     ├── favicon.ico
+    ├── og-image.png
     ├── processace-logo-black.png
     └── processace-logo-white.png
 
@@ -37,29 +43,32 @@ Because this project is completely static and uses no build steps or bundlers, g
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/ProcessAce/ProcessAce-Landing.git
-cd ProcessAce-Landing
+git clone https://github.com/processace/processace-landing.git
+cd processace-landing
+
 ```
 
 
 2. **Serve the files:**
-You can simply double-click `index.html` to open it in your browser. However, for the best experience (and to prevent local CORS issues with future assets), it is recommended to use a local development server:
+You can simply double-click `index.html` to open it in your browser. However, for the best experience (and to test the `/es/` routing properly without CORS issues), it is recommended to use a local development server:
 *Using Python:*
 ```bash
 python -m http.server 8000
+
 ```
 
 
 *Using Node.js (npx):*
 ```bash
 npx serve
+
 ```
 
 
 *Using VS Code:*
 Right-click `index.html` and select **"Open with Live Server"**.
 3. **View the site:**
-Navigate to `http://localhost:8000` (or the port provided by your server).
+Navigate to `http://localhost:8000` (or the port provided by your server). You can test the localization by appending `/es/` to the URL.
 
 ## 🔗 Related Repositories
 
