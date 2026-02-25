@@ -85,6 +85,7 @@
                 <li><a href="#how-it-works">Cómo Funciona</a></li>
                 <li><a href="#up-and-running">Comenzar</a></li>
                 <li><a href="#pricing">Precios</a></li>
+                <li><a href="#contact">Contacto</a></li>
                 <li>
                     <a href="/" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                         🌐 EN
@@ -404,7 +405,7 @@
                         <li><span class="feature-check">&#10003;</span> Acceso directo al equipo de desarrollo</li>
                     </ul>
 
-                    <a href="mailto:hola@processace.com" class="btn btn-primary">Contactar Ventas</a>
+                    <a href="#contact" id="btn-contact-sales-es" class="btn btn-primary">Contactar Ventas</a>
                 </div>
             </div>
 
@@ -426,16 +427,55 @@
                             Procesos</li>
                     </ul>
 
-                    <a href="mailto:hola@processace.com" class="btn btn-primary">
+                    <a href="#contact" id="btn-book-consultation-es" class="btn btn-primary">
                         Agendar una Consulta
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-left: 0.25rem;">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
                         </svg>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Ponte en <span class="text-primary">Contacto</span></h2>
+                <p class="section-subtitle">¿Tienes preguntas sobre ProcessAce o necesitas consultoría? Envíanos un
+                    mensaje.</p>
+            </div>
+
+            <div class="contact-container fade-up" style="transition-delay: 0.1s;">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+                    <input type="hidden" name="access_key" value="7e0b9ea7-4418-4a04-8ab3-7b055a2dc82c">
+
+                    <input type="hidden" name="redirect" value="https://processace.com/es/">
+
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required placeholder="Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="juan@empresa.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="¿Cómo podemos ayudarte?"></textarea>
+                    </div>
+
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                </form>
             </div>
         </section>
     </main>
@@ -554,6 +594,25 @@
                 consultingContent.classList.remove('animate-in');
                 void consultingContent.offsetWidth; // Force reflow
                 consultingContent.classList.add('animate-in');
+            });
+        }
+
+        // Contact Form Pre-fill Logic (Spanish)
+        const contactSalesBtnEs = document.getElementById('btn-contact-sales-es');
+        const bookConsultationBtnEs = document.getElementById('btn-book-consultation-es');
+        const messageInputEs = document.getElementById('message');
+
+        if (contactSalesBtnEs && messageInputEs) {
+            contactSalesBtnEs.addEventListener('click', () => {
+                messageInputEs.value = "Hola, estoy interesado en la Licencia Comercial de ProcessAce para mi organización. ¿Podrían enviarme más información sobre precios, características y opciones de despliegue?";
+                setTimeout(() => messageInputEs.focus(), 600); // Focus after smooth scroll
+            });
+        }
+
+        if (bookConsultationBtnEs && messageInputEs) {
+            bookConsultationBtnEs.addEventListener('click', () => {
+                messageInputEs.value = "Hola, me gustaría agendar una consultoría para hablar sobre arquitectura de procesos, automatización inteligente y cómo podríamos integrar ProcessAce en nuestros flujos de trabajo. Quedo atento a su disponibilidad.";
+                setTimeout(() => messageInputEs.focus(), 600); // Focus after smooth scroll
             });
         }
     </script>
