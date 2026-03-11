@@ -273,6 +273,45 @@
             </div>
         </section>
 
+        <section id="app-preview" class="container" style="margin-bottom: 4rem;">
+            <div class="section-header fade-up">
+                <h2 class="section-title">ProcessAce en <span class="text-primary">Acción</span></h2>
+                <p class="section-subtitle">Descubre cómo es usar ProcessAce paso a paso.</p>
+            </div>
+
+            <div class="pricing-toggle fade-up" style="transition-delay: 0.1s; margin-bottom: 2rem;">
+                <button class="toggle-btn active" id="btn-preview-landing">Generación de Artefactos</button>
+                <button class="toggle-btn" id="btn-preview-bpmn">Editor BPMN</button>
+            </div>
+
+            <div class="preview-container fade-up" style="transition-delay: 0.2s;">
+                <div id="img-landing" class="preview-group active">
+                    <img src="/assets/screenshots/landing-es-1.jpeg" alt="Paso 1: Añadir documento"
+                        class="preview-image active">
+                    <img src="/assets/screenshots/landing-es-2.jpeg" alt="Paso 2: Procesando" class="preview-image">
+                    <img src="/assets/screenshots/landing-es-3.jpeg" alt="Paso 3: Resultados" class="preview-image">
+                </div>
+                <div id="img-bpmn" class="preview-group">
+                    <img src="/assets/screenshots/bpmn-es-1.jpeg" alt="Vista del diagrama BPMN"
+                        class="preview-image active">
+                    <img src="/assets/screenshots/bpmn-es-2.jpeg" alt="Edición de BPMN" class="preview-image">
+                    <img src="/assets/screenshots/bpmn-es-3.jpeg" alt="Exportar BPMN" class="preview-image">
+                </div>
+                <div class="preview-dots" id="preview-dots"></div>
+            </div>
+
+            <div class="preview-descriptions fade-up" style="transition-delay: 0.3s;">
+                <div id="desc-landing" class="preview-text active">
+                    <p>Sube tus documentos y deja que la IA analice, estructure y genere automáticamente todos tus
+                        artefactos de procesos en segundos.</p>
+                </div>
+                <div id="desc-bpmn" class="preview-text">
+                    <p>Visualiza y edita los diagramas BPMN generados. Ajusta roles, tareas y secuencias con una
+                        interfaz intuitiva lista para exportar.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="how-it-works" class="how-it-works">
             <div class="container">
                 <div class="section-header fade-up">
@@ -613,6 +652,107 @@
                 consultingContent.classList.remove('animate-in');
                 void consultingContent.offsetWidth; // Force reflow
                 consultingContent.classList.add('animate-in');
+            });
+        }
+
+        // App Preview Toggle & Animation
+        const btnPreviewLanding = document.getElementById('btn-preview-landing');
+        const btnPreviewBpmn = document.getElementById('btn-preview-bpmn');
+        const imgLanding = document.getElementById('img-landing');
+        const imgBpmn = document.getElementById('img-bpmn');
+        const descLanding = document.getElementById('desc-landing');
+        const descBpmn = document.getElementById('desc-bpmn');
+        const previewDots = document.getElementById('preview-dots');
+
+        let previewInterval;
+
+        function startPreviewAnimation(groupId) {
+            clearInterval(previewInterval);
+            const group = document.getElementById(groupId);
+            if (!group) return;
+
+            const images = group.querySelectorAll('.preview-image');
+            if (images.length <= 1) {
+                if (previewDots) previewDots.innerHTML = '';
+                return;
+            }
+
+            let currentIndex = 0;
+            // Asegurar que comience desde la imagen activa o la primera
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+
+            if (previewDots) {
+                previewDots.innerHTML = '';
+                images.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('preview-dot');
+                    if (index === currentIndex) dot.classList.add('active');
+                    dot.setAttribute('aria-label', `Ir a imagen ${index + 1}`);
+                    dot.addEventListener('click', () => {
+                        changeSlide(currentIndex, index, images);
+                        currentIndex = index;
+                        resetInterval();
+                    });
+                    previewDots.appendChild(dot);
+                });
+            }
+
+            function changeSlide(oldIndex, newIndex, imgs) {
+                if (oldIndex === newIndex) return;
+                imgs[oldIndex].classList.remove('active');
+                imgs[newIndex].classList.add('active');
+                if (previewDots) {
+                    const dots = previewDots.querySelectorAll('.preview-dot');
+                    if (dots[oldIndex]) dots[oldIndex].classList.remove('active');
+                    if (dots[newIndex]) dots[newIndex].classList.add('active');
+                }
+            }
+
+            function resetInterval() {
+                clearInterval(previewInterval);
+                previewInterval = setInterval(() => {
+                    const newIndex = (currentIndex + 1) % images.length;
+                    changeSlide(currentIndex, newIndex, images);
+                    currentIndex = newIndex;
+                }, 4000); // 4 segundos por imagen
+            }
+
+            resetInterval();
+        }
+
+        if (btnPreviewLanding && btnPreviewBpmn && imgLanding && imgBpmn) {
+            startPreviewAnimation('img-landing');
+
+            btnPreviewLanding.addEventListener('click', () => {
+                if (btnPreviewLanding.classList.contains('active')) return;
+
+                btnPreviewLanding.classList.add('active');
+                btnPreviewBpmn.classList.remove('active');
+
+                imgLanding.classList.add('active');
+                descLanding.classList.add('active');
+                imgBpmn.classList.remove('active');
+                descBpmn.classList.remove('active');
+
+                startPreviewAnimation('img-landing');
+            });
+
+            btnPreviewBpmn.addEventListener('click', () => {
+                if (btnPreviewBpmn.classList.contains('active')) return;
+
+                btnPreviewBpmn.classList.add('active');
+                btnPreviewLanding.classList.remove('active');
+
+                imgBpmn.classList.add('active');
+                descBpmn.classList.add('active');
+                imgLanding.classList.remove('active');
+                descLanding.classList.remove('active');
+
+                startPreviewAnimation('img-bpmn');
             });
         }
 

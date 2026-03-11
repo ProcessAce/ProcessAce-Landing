@@ -746,7 +746,115 @@ svg {
 }
 
 /* ==========================================================================
-   13. Contact Form Section
+   13. App Preview Section
+   ========================================================================== */
+.preview-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.preview-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preview-group.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.preview-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--card-bg);
+}
+
+.preview-image.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.preview-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.preview-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.preview-dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.preview-dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+}
+
+.preview-descriptions {
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    position: relative;
+    min-height: 80px;
+}
+
+.preview-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    color: var(--text-muted);
+}
+
+.preview-text p {
+    font-size: 1.1rem;
+}
+
+.preview-text.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   14. Contact Form Section
    ========================================================================== */
 .contact-container {
     max-width: 600px;
