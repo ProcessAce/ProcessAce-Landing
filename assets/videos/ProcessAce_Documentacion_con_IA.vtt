@@ -1,0 +1,73 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Hoy vamos a ver qué es ProcessAce, una IA que busca transformar la documentación de procesos.
+
+2
+00:00:05.100 --> 00:00:12.000
+Y es que, seamos sinceros, documentar procesos de negocio suele ser un verdadero caos para cualquier equipo.
+
+3
+00:00:12.100 --> 00:00:19.500
+La información está por todos lados, en mil formatos. Así, mantener la consistencia es casi imposible.
+
+4
+00:00:19.600 --> 00:00:26.500
+Este trabajo manual consume horas súper valiosas. Y claro, siempre aumenta el riesgo de cometer errores.
+
+5
+00:00:26.600 --> 00:00:33.500
+Y aquí es donde entra la solución: ProcessAce, que está diseñado para automatizar todo este flujo.
+
+6
+00:00:33.600 --> 00:00:40.500
+O sea, transforma texto desordenado en documentos estandarizados y profesionales, en cuestión de minutos.
+
+7
+00:00:40.600 --> 00:00:47.500
+¿Y cómo lo hace? Bueno, parece magia. Pero en realidad son tres pasos súper claros y confiables.
+
+8
+00:00:47.600 --> 00:00:54.500
+Primero, ingiere la evidencia. Después, la analiza con IA. Y finalmente, genera todos los documentos.
+
+9
+00:00:54.600 --> 00:01:01.500
+Una de sus ventajas más importantes es su arquitectura, que está pensada para el control y la seguridad.
+
+10
+00:01:01.600 --> 00:01:08.500
+Permite autohospedaje, usar un LLM propio y, por supuesto, todas las claves API van encriptadas.
+
+11
+00:01:08.600 --> 00:01:14.500
+Y no hay que atarse a un solo proveedor. Da la flexibilidad de elegir entre los grandes del mercado.
+
+12
+00:01:14.600 --> 00:01:20.500
+Y para que todo funcione sin problemas, la arquitectura usa un sistema de colas para las tareas complejas.
+
+13
+00:01:20.600 --> 00:01:27.500
+Además, tiene un ciclo de autovalidación y corrección. Esto garantiza que los diagramas siempre sean válidos.
+
+14
+00:01:27.600 --> 00:01:32.500
+Bueno, ¿y cómo se empieza a usar? Es bastante directo, sobre todo para quienes ya usan Docker.
+
+15
+00:01:32.600 --> 00:01:38.500
+Solo hay que clonar el repo, configurar un archivo y levantarlo con un simple comando de Docker.
+
+16
+00:01:38.600 --> 00:01:44.500
+Y para probarlo de una, se puede usar un archivo de ejemplo y generar el primer diagrama al instante.
+
+17
+00:01:44.600 --> 00:01:50.500
+Parece una gran solución para decirle adiós a la documentación manual. La pregunta es...
+
+18
+00:01:50.600 --> 00:01:55.000
+...¿qué haríamos con ese tiempo?
