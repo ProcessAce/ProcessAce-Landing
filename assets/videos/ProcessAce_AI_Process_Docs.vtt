@@ -1,0 +1,77 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Okay, let's dive into an AI tool that's fixing our messy, outdated process documents.
+
+2
+00:00:05.100 --> 00:00:10.000
+Yeah, we've all been there, right? Trying to sort through scattered information... it's just a mess.
+
+3
+00:00:10.100 --> 00:00:15.000
+And you know, all that manual work? It leads to docs that are unreliable and a pain to update.
+
+4
+00:00:15.100 --> 00:00:20.000
+But what if AI could fix all that? Well, this is where a tool like ProcessAce comes in.
+
+5
+00:00:20.100 --> 00:00:27.000
+It's an AI engine that takes your raw text from notes or emails and turns it into docs.
+
+6
+00:00:27.100 --> 00:00:32.000
+So, how does it work? It's a pretty straightforward three-step automated pipeline.
+
+7
+00:00:32.100 --> 00:00:38.000
+And what you get is pretty cool. We're talking standard stuff like BPMN diagrams and RACI matrices.
+
+8
+00:00:38.100 --> 00:00:44.000
+Okay, but are the diagrams any good? That's a huge issue with AI, but ProcessAce has a fix.
+
+9
+00:00:44.100 --> 00:00:49.000
+Basically, this whole system makes sure your diagrams are always valid and actually work.
+
+10
+00:00:49.100 --> 00:00:54.000
+But what really sets it apart is the control you get. Let's see how it stacks up.
+
+11
+00:00:54.100 --> 00:00:59.000
+You host it yourself and bring your own AI model. That's a game-changer for data security.
+
+12
+00:00:59.100 --> 00:01:05.000
+And you've got options: OpenAI, Google, Anthropic. Plus, your API keys are kept safe.
+
+13
+00:01:05.100 --> 00:01:10.000
+The best part? Getting started is super fast. We're talking just a few minutes here.
+
+14
+00:01:10.100 --> 00:01:15.000
+Seriously, if you know Docker, it's really just three easy steps to get up and running.
+
+15
+00:01:15.100 --> 00:01:20.000
+And check this out... this is the one command you need to launch everything. That's it.
+
+16
+00:01:20.100 --> 00:01:25.000
+After it's running, you just pop into the web UI to set up your account and API key.
+
+17
+00:01:25.100 --> 00:01:29.000
+But what's here now is just the beginning. The vision for this project is even bigger.
+
+18
+00:01:29.100 --> 00:01:35.000
+Think about it. Ingesting audio, video, even screenshots to build process models. That's what's next.
+
+19
+00:01:35.100 --> 00:01:41.000
+So, are you ready to ditch the manual diagramming? ProcessAce gives you a powerful, self-hosted option.
