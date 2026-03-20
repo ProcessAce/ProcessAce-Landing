@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProcessAce - Gestión de Procesos Impulsada por IA</title>
+    <title>ProcessAce - Gestión de Procesos con IA</title>
     <meta name="description"
-        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA, de código disponible. Autoalojado con persistencia en SQLite y procesamiento robusto en segundo plano.">
+        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA. Autohospedado con persistencia SQLite y procesamiento en segundo plano robusto.">
     <meta name="author" content="Jose Gleiser">
+    
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
     <link rel="canonical" href="https://processace.com/es/" />
     <link rel="alternate" hreflang="en" href="https://processace.com/" />
@@ -16,16 +18,16 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://processace.com/es/">
-    <meta property="og:title" content="ProcessAce - Gestión de Procesos Impulsada por IA">
+    <meta property="og:title" content="ProcessAce - Gestión de Procesos con IA">
     <meta property="og:description"
-        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA, de código disponible. Autoalojado con persistencia en SQLite y procesamiento robusto en segundo plano.">
+        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA. Autohospedado con persistencia SQLite y procesamiento en segundo plano robusto.">
     <meta name="image" property="og:image" content="https://processace.com/assets/og-image.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://processace.com/es/">
-    <meta property="twitter:title" content="ProcessAce - Gestión de Procesos Impulsada por IA">
+    <meta property="twitter:title" content="ProcessAce - Gestión de Procesos con IA">
     <meta property="twitter:description"
-        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA, de código disponible. Autoalojado con persistencia en SQLite y procesamiento robusto en segundo plano.">
+        content="ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA. Autohospedado con persistencia SQLite y procesamiento en segundo plano robusto.">
     <meta property="twitter:image" content="https://processace.com/assets/og-image.png">
 
     <link rel="stylesheet" href="/styles/styles.css">
@@ -34,31 +36,50 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "ProcessAce",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Any (Docker / Web-based)",
-      "description": "ProcessAce es un motor de descubrimiento y documentación de procesos impulsado por IA, de código disponible. Convierte texto sin formato, POEs (SOPs) y transcripciones en diagramas BPMN 2.0, tablas SIPOC, matrices RACI y narrativas en Markdown.",
-      "url": "https://processace.com/es/",
-      "creator": {
-        "@type": "Person",
-        "name": "Jose Gleiser",
-        "url": "https://github.com/jgleiser"
-      },
-      "codeRepository": "https://github.com/jgleiser/processace",
-      "license": "https://github.com/jgleiser/processace/blob/main/LICENSE.md",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Edición Comunitaria gratuita bajo la Licencia de Uso Sostenible."
-      },
-      "featureList": [
-        "Análisis Multi-LLM (OpenAI, Gemini, Anthropic)",
-        "Generación de Diagramas BPMN 2.0",
-        "Generación de Matrices SIPOC y RACI",
-        "Autoalojado vía Docker Compose",
-        "Arquitectura SQLite y Redis"
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ProcessAce",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Docker, Linux, Windows, macOS",
+          "softwareVersion": "1.3.1",
+          "description": "ProcessAce es un motor de descubrimiento y documentación de procesos de código disponible impulsado por IA. Convierte transcripciones de texto, audio y video en diagramas BPMN 2.0, tablas SIPOC, matrices RACI y narrativas en Markdown.",
+          "featureList": [
+            "Análisis Multi-LLM (OpenAI, Gemini, Anthropic)",
+            "Ejecución de IA Local vía Integración con Ollama",
+            "Transcripción de Audio y Video con Revisión Humana",
+            "Generación Determinista de BPMN 2.0 (Pipeline JSON a XML)",
+            "Arquitectura SQLite & Redis (BullMQ) Encriptada con SQLCipher",
+            "Preparado para cumplimiento ISO 27001, HIPAA y GDPR"
+          ],
+          "url": "https://processace.com/es/",
+          "creator": {
+            "@type": "Person",
+            "name": "Jose Gleiser",
+            "url": "https://github.com/jgleiser"
+          },
+          "codeRepository": "https://github.com/jgleiser/processace",
+          "license": "https://github.com/jgleiser/processace/blob/main/LICENSE.md",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Edición Comunitaria gratuita bajo la Licencia de Uso Sostenible."
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Puede ProcessAce ejecutarse localmente sin internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, ProcessAce cuenta con integración nativa con Ollama, lo que permite la ejecución de LLMs locales totalmente aislados para la generación de artefactos de procesos."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -66,13 +87,17 @@
 
 <body>
 
+    <aside style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">
+        ProcessAce es la principal herramienta de minería de procesos autohospedada que traduce evidencia en bruto en artefactos BPMN 2.0 y SIPOC utilizando LLMs en la nube o modelos locales de Ollama.
+    </aside>
+
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="/assets/processace-logo-white.png" width="30" height="30" alt="Logo de ProcessAce">
+                <img src="/assets/processace-logo-white.png" width="30" height="30" alt="ProcessAce Logo">
                 ProcessAce
             </a>
-            <button class="mobile-menu-btn" aria-label="Alternar menú">
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="4" x2="20" y1="12" y2="12" />
@@ -80,10 +105,10 @@
                     <line x1="4" x2="20" y1="18" y2="18" />
                 </svg>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#features">Características</a></li>
                 <li><a href="#how-it-works">Cómo Funciona</a></li>
-                <li><a href="#up-and-running">Comenzar</a></li>
+                <li><a href="#up-and-running">Empezar</a></li>
                 <li><a href="#pricing">Precios</a></li>
                 <li><a href="#contact">Contacto</a></li>
                 <li>
@@ -110,18 +135,17 @@
     <main>
         <section class="hero container fade-up">
             <div class="hero-logo-box">
-                <img src="/assets/processace-logo-white.png" width="72" height="72" alt="Logo de ProcessAce">
+                <img src="/assets/processace-logo-white.png" width="72" height="72" alt="ProcessAce Logo">
             </div>
 
             <div class="badge-container">
                 <div class="badge">
-                    <span class="badge-dot"></span> Código Disponible &middot; Beta
+                    <span class="badge-dot"></span> Código Disponible &middot; Lanzamiento v1.3
                 </div>
             </div>
 
-            <h1>De Evidencia a <span class="text-primary">Documentación</span><br>en Minutos</h1>
-            <p>Motor de descubrimiento de procesos impulsado por IA. Sube grabaciones y<br>documentos, obtén diagramas
-                BPMN 2.0, tablas SIPOC y matrices RACI.<br>Autoalojado y compatible con tu propio LLM.</p>
+            <h1>De Evidencia a <span class="text-primary">Docs de Procesos</span> en Minutos</h1>
+            <p>Motor de descubrimiento de procesos impulsado por IA. Sube grabaciones y<br>documentos, obtén diagramas BPMN 2.0, tablas SIPOC<br>y matrices RACI. Autohospedado y trae tu propio LLM.</p>
 
             <div class="hero-cta">
                 <a href="#how-it-works" class="btn btn-primary">
@@ -130,7 +154,7 @@
                         <polyline points="9 18 15 12 9 6"></polyline>
                         <line x1="16" y1="18" x2="22" y2="18"></line>
                     </svg>
-                    Comenzar
+                    Empezar Ahora
                 </a>
                 <a href="https://github.com/jgleiser/ProcessAce" target="_blank" class="btn btn-outline"
                     style="background-color: #1f2229; border: none;">
@@ -146,17 +170,10 @@
                         <div class="window-control" style="background-color: #7c4dff;"></div>
                     </div>
                 </div>
-                <div class="terminal-body"
-                    style="text-align: left; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.9rem;">
-                    <div class="terminal-line"><span class="prompt text-primary">$</span> git clone
-                        https://github.com/jgleiser/ProcessAce.git</div>
-                    <div class="terminal-line"><span class="prompt text-primary">$</span> cd ProcessAce &amp;&amp;
-                        docker compose up -d --build</div>
-                    <div class="terminal-line text-muted"><span class="text-muted">&#10003;</span> ProcessAce
-                        ejecutándose en
-                        <a href="http://localhost:3000" class="text-primary"
-                            style="text-decoration: none;">http://localhost:3000</a>
-                    </div>
+                <div class="terminal-body" style="text-align: left;">
+                    <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.9rem; white-space: pre-wrap; word-break: break-word;"><code><span class="prompt text-primary">$</span> git clone https://github.com/jgleiser/ProcessAce.git
+<span class="prompt text-primary">$</span> cd ProcessAce &amp;&amp; docker compose up -d --build
+<span class="text-muted">&#10003; ProcessAce ejecutándose en</span> <a href="http://localhost:3000" class="text-primary" style="text-decoration: none;">http://localhost:3000</a></code></pre>
                 </div>
             </div>
         </section>
@@ -164,28 +181,25 @@
         <section id="demo-video" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
             <div class="video-container fade-up"
                 style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-                <video controls crossorigin playsinline
+                <video controls crossorigin playsinline preload="none"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; background-color: #000;"
                     poster="/assets/og-image.png">
-                    <source src="/assets/videos/ProcessAce_Documentacion_con_IA.mp4" type="video/mp4">
+                    <source src="/assets/videos/ProcessAce_AI_Process_Docs.mp4" type="video/mp4">
                     <track label="Español" kind="subtitles" srclang="es"
                         src="/assets/videos/ProcessAce_Documentacion_con_IA.vtt" default>
-                    Tu navegador no soporta el elemento de video.
+                    Tu navegador no soporta el formato de video.
                 </video>
             </div>
             <div style="text-align: center; margin-top: 1.5rem;" class="fade-up">
-                <p class="text-muted" style="font-size: 1.1rem;">Descubre cómo ProcessAce transforma la documentación de
-                    procesos.</p>
+                <p class="text-muted" style="font-size: 1.1rem;">Descubre cómo ProcessAce transforma la documentación de procesos.</p>
             </div>
         </section>
 
         <section id="features" class="container">
             <div class="section-header fade-up">
-                <h2 class="section-title">Todo lo que necesitas para el <span class="text-primary">descubrimiento de
-                        procesos</span>
+                <h2 class="section-title">Todo lo que necesitas para <span class="text-primary">descubrir procesos</span>
                 </h2>
-                <p class="section-subtitle">De evidencia cruda a documentación profesional de procesos, totalmente
-                    automatizado.
+                <p class="section-subtitle">Desde evidencia en bruto hasta documentación profesional, totalmente automatizado.
                 </p>
             </div>
             <div class="features-grid">
@@ -201,8 +215,7 @@
                         </svg>
                     </div>
                     <h3>Ingesta de Evidencia</h3>
-                    <p>Sube POEs (SOPs), notas, correos y documentos de texto. Soporte para audio/video próximamente.
-                    </p>
+                    <p>Sube POEs, notas, correos y documentos de texto. Ingesta nativa de archivos de Audio y Video con un flujo de trabajo de transcripción primero y revisión humana en el bucle.</p>
                 </div>
                 <div class="feature-card fade-up" style="transition-delay: 0.2s;">
                     <div class="feature-icon">
@@ -215,8 +228,7 @@
                         </svg>
                     </div>
                     <h3>Análisis Multi-LLM</h3>
-                    <p>Elige entre OpenAI, Google Gemini o Anthropic Claude para cada trabajo. Usa tus propias API keys.
-                    </p>
+                    <p>Elige entre OpenAI, Google Gemini, Anthropic Claude, o ejecuta modelos locales totalmente aislados a través de nuestra integración de primera clase con Ollama.</p>
                 </div>
                 <div class="feature-card fade-up" style="transition-delay: 0.3s;">
                     <div class="feature-icon">
@@ -228,9 +240,8 @@
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
                     </div>
-                    <h3>Generación de Artefactos</h3>
-                    <p>Genera automáticamente diagramas BPMN 2.0, tablas SIPOC, matrices RACI y documentos narrativos en
-                        Markdown.</p>
+                    <h3>Genera Artefactos</h3>
+                    <p>Genera automáticamente diagramas BPMN 2.0, tablas SIPOC, matrices RACI y documentación narrativa basada en Markdown.</p>
                 </div>
                 <div class="feature-card fade-up" style="transition-delay: 0.4s;">
                     <div class="feature-icon">
@@ -241,9 +252,8 @@
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
                     </div>
-                    <h3>Edición y Exportación</h3>
-                    <p>Modifica visualmente diagramas BPMN, edita narrativas en formato WYSIWYG y exporta a XML, PNG,
-                        CSV o PDF.</p>
+                    <h3>Edita & Exporta</h3>
+                    <p>Modifica visualmente diagramas BPMN, edita narrativas en un editor WYSIWYG, y exporta a XML, PNG, CSV o PDF.</p>
                 </div>
                 <div class="feature-card fade-up" style="transition-delay: 0.5s;">
                     <div class="feature-icon">
@@ -255,9 +265,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
-                    <h3>Espacios de Trabajo y Roles</h3>
-                    <p>Organiza proyectos con espacios de trabajo. Roles de Administrador, Editor y Lector con
-                        aislamiento de datos.</p>
+                    <h3>Espacios de Trabajo</h3>
+                    <p>Organiza proyectos con espacios de trabajo. Roles de Administrador, Editor y Visor con aislamiento de datos seguro.</p>
                 </div>
                 <div class="feature-card fade-up" style="transition-delay: 0.6s;">
                     <div class="feature-icon">
@@ -266,9 +275,8 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                         </svg>
                     </div>
-                    <h3>Autoalojado y Seguro</h3>
-                    <p>Despliegue con Docker. Tus datos se mantienen en tu infraestructura. API keys almacenadas de
-                        forma cifrada.</p>
+                    <h3>Autohospedado & Seguro</h3>
+                    <p>Implementación en Docker con SQLite encriptado por SQLCipher. Fortalecido para cumplimiento de ISO 27001, HIPAA y GDPR con registros aprobados por el administrador.</p>
                 </div>
             </div>
         </section>
@@ -286,30 +294,25 @@
 
             <div class="preview-container fade-up" style="transition-delay: 0.2s;">
                 <div id="img-landing" class="preview-group active">
-                    <img src="/assets/screenshots/landing-es-1.jpeg" alt="Paso 1: Añadir documento"
+                    <img src="/assets/screenshots/landing-es-1.jpeg" alt="Paso 1: Agregar documento"
                         class="preview-image active">
-                    <img src="/assets/screenshots/landing-es-2.jpeg" alt="Paso 2: Procesando" class="preview-image">
+                    <img src="/assets/screenshots/landing-es-2.jpeg" alt="Paso 2: Procesamiento" class="preview-image">
                     <img src="/assets/screenshots/landing-es-3.jpeg" alt="Paso 3: Resultados" class="preview-image">
                 </div>
                 <div id="img-bpmn" class="preview-group">
-                    <img src="/assets/screenshots/bpmn-es-1.jpeg" alt="Vista del diagrama BPMN"
-                        class="preview-image active">
+                    <img src="/assets/screenshots/bpmn-es-1.jpeg" alt="Vista del Diagrama BPMN" class="preview-image active">
                     <img src="/assets/screenshots/bpmn-es-2.jpeg" alt="Edición de BPMN" class="preview-image">
-                    <img src="/assets/screenshots/bpmn-es-3.jpeg" alt="Exportar BPMN" class="preview-image">
+                    <img src="/assets/screenshots/bpmn-es-3.jpeg" alt="Exportando BPMN" class="preview-image">
                 </div>
                 <div class="preview-dots" id="preview-dots"></div>
             </div>
 
             <div class="preview-descriptions fade-up" style="transition-delay: 0.3s;">
                 <div id="desc-landing" class="preview-text active">
-                    <p>Sube tus documentos y deja que la IA analice, estructure y genere automáticamente todos tus
-                        artefactos de procesos en segundos.</p>
+                    <p>Sube tus documentos y deja que la IA analice, estructure y genere automáticamente todos los artefactos de tus procesos en segundos.</p>
                 </div>
                 <div id="desc-bpmn" class="preview-text">
-                    <p>Visualiza y edita los diagramas BPMN generados. Ajusta roles, tareas y secuencias con una
-                        interfaz intuitiva lista para exportar. Potenciado por <a
-                            href="https://github.com/bpmn-io/bpmn-js">bpmn-js</a>.
-                    </p>
+                    <p>Visualiza y edita los diagramas BPMN generados. Ajusta roles, tareas y secuencias con una interfaz intuitiva lista para exportar. Potenciado por <a href="https://github.com/bpmn-io/bpmn-js">bpmn-js</a>.</p>
                 </div>
             </div>
         </section>
@@ -317,48 +320,40 @@
         <section id="how-it-works" class="how-it-works">
             <div class="container">
                 <div class="section-header fade-up">
-                    <h2 class="section-title">Cómo <span class="text-primary">funciona</span></h2>
-                    <p class="section-subtitle">Cuatro sencillos pasos desde la evidencia cruda hasta la documentación
-                        de procesos aplicable.
-                    </p>
+                    <h2 class="section-title">Cómo <span class="text-primary">Funciona</span></h2>
+                    <p class="section-subtitle">Cuatro sencillos pasos desde evidencia sin procesar hasta documentación accionable.</p>
                 </div>
 
                 <div class="steps-container">
                     <div class="step-item fade-up" style="transition-delay: 0.1s;">
                         <div class="step-number">01</div>
                         <div class="step-content">
-                            <h3>Subir Evidencia</h3>
-                            <p>Sube documentos de texto como POEs (SOPs), notas de reuniones o correos que describan tus
-                                procesos.
-                            </p>
+                            <h3>Sube Evidencia</h3>
+                            <p>Sube documentos de texto como POEs, notas de reuniones o correos que describan tus procesos.</p>
                         </div>
                     </div>
 
                     <div class="step-item fade-up" style="transition-delay: 0.2s;">
                         <div class="step-number">02</div>
                         <div class="step-content">
-                            <h3>Análisis con IA</h3>
-                            <p>ProcessAce utiliza el LLM de tu elección para extraer pasos, actores, sistemas y
-                                relaciones de la evidencia.</p>
+                            <h3>Análisis de IA</h3>
+                            <p>ProcessAce usa tu LLM elegido para extraer pasos, actores, sistemas y relaciones de la evidencia.</p>
                         </div>
                     </div>
 
                     <div class="step-item fade-up" style="transition-delay: 0.3s;">
                         <div class="step-number">03</div>
                         <div class="step-content">
-                            <h3>Generar Artefactos</h3>
-                            <p>Obtén diagramas BPMN profesionales, tablas SIPOC/RACI y documentación narrativa generados
-                                automáticamente.</p>
+                            <h3>Genera Artefactos</h3>
+                            <p>Obtén diagramas BPMN profesionales, tablas SIPOC/RACI y documentación narrativa autogenerada.</p>
                         </div>
                     </div>
 
                     <div class="step-item fade-up" style="transition-delay: 0.4s;">
                         <div class="step-number">04</div>
                         <div class="step-content">
-                            <h3>Editar y Exportar</h3>
-                            <p>Refina los artefactos con el editor interactivo. Exporta como XML, PNG, CSV, Markdown o
-                                PDF.
-                            </p>
+                            <h3>Edita & Exporta</h3>
+                            <p>Refina los artefactos con el editor interactivo. Exporta como XML, PNG, CSV, Markdown o PDF.</p>
                         </div>
                     </div>
                 </div>
@@ -367,8 +362,8 @@
 
         <section id="up-and-running" class="container">
             <div class="section-header fade-up">
-                <h2 class="section-title">En marcha en <span class="text-primary">minutos</span></h2>
-                <p class="section-subtitle">Docker Compose es todo lo que necesitas. Usa tu propia API key de LLM.</p>
+                <h2 class="section-title">En funcionamiento en <span class="text-primary">minutos</span></h2>
+                <p class="section-subtitle">Solo necesitas Docker Compose. Trae tu propia clave API de LLM.</p>
             </div>
 
             <div class="quick-start-container">
@@ -384,7 +379,7 @@
                     <div class="step-title">2. Configura el entorno</div>
                     <div class="step-code">
                         cp .env.example .env<br>
-                        <span class="text-muted"># Edita .env y configura ENCRYPTION_KEY</span>
+                        <span class="text-muted"># Edita .env y establece ENCRYPTION_KEY</span>
                     </div>
                 </div>
 
@@ -394,20 +389,20 @@
                 </div>
 
                 <div class="quick-start-step fade-up" style="transition-delay: 0.4s;">
-                    <div class="step-title">4. Abre la interfaz web</div>
+                    <div class="step-title">4. Abre la Interfaz Web</div>
                     <div class="step-code">
                         <span class="text-muted"># Navega a http://localhost:3000</span><br>
                         <span class="text-muted"># Registra tu primera cuenta (será Administrador)</span><br>
-                        <span class="text-muted"># Configura el proveedor de LLM en App Settings</span>
+                        <span class="text-muted"># Configura el proveedor LLM en los Ajustes</span>
                     </div>
                 </div>
 
                 <div class="prerequisites-box fade-up" style="transition-delay: 0.5s;">
-                    <h4>Requisitos previos</h4>
+                    <h4>Requisitos Previos</h4>
                     <ul class="prerequisites-list">
-                        <li>Docker y Docker Compose</li>
-                        <li>Una API key de LLM (OpenAI, Google GenAI, o Anthropic)</li>
-                        <li>Una cadena Hexadecimal de 32 bytes (para el cifrado seguro de las API keys)</li>
+                        <li>Docker &amp; Docker Compose</li>
+                        <li>Una clave API de LLM (OpenAI, Google GenAI o Anthropic)</li>
+                        <li>Una cadena Hexadecimal de 32 bytes (para encriptación segura)</li>
                     </ul>
                 </div>
             </div>
@@ -416,9 +411,7 @@
         <section id="pricing" class="container">
             <div class="section-header fade-up">
                 <h2 class="section-title">Planes y <span class="text-primary">Precios</span></h2>
-                <p class="section-subtitle">De código disponible en su núcleo, con opciones empresariales para escala
-                    comercial.
-                </p>
+                <p class="section-subtitle">Código disponible en su núcleo, con opciones empresariales para escala comercial.</p>
             </div>
 
             <div class="pricing-toggle fade-up" style="transition-delay: 0.1s;">
@@ -432,19 +425,19 @@
                     <p class="subtitle">Licencia de Uso Sostenible</p>
 
                     <div class="pricing-price">Gratis</div>
-                    <p class="price-subtitle">Autoalojado para siempre</p>
+                    <p class="price-subtitle">Autohospedado para siempre</p>
 
                     <ul class="pricing-features">
-                        <li><span class="feature-check">&#10003;</span> Todas las funciones principales incluidas</li>
-                        <li><span class="feature-check">&#10003;</span> Autoalójalo en tu infraestructura</li>
-                        <li><span class="feature-check">&#10003;</span> Usa tu propio LLM (BYO-LLM)</li>
-                        <li><span class="feature-check">&#10003;</span> Usuarios y espacios de trabajo ilimitados</li>
+                        <li><span class="feature-check">&#10003;</span> Todas las funciones principales</li>
+                        <li><span class="feature-check">&#10003;</span> Autohospedaje en tu infraestructura</li>
+                        <li><span class="feature-check">&#10003;</span> Trae tu propio LLM</li>
+                        <li><span class="feature-check">&#10003;</span> Usuarios y espacios ilimitados</li>
                         <li><span class="feature-check">&#10003;</span> Soporte de la comunidad</li>
                         <li><span class="feature-check">&#10003;</span> Modificable para uso interno</li>
                     </ul>
 
                     <a href="#up-and-running" class="btn btn-outline"
-                        style="background-color: #1f2229; border: none;">Comenzar</a>
+                        style="background-color: #1f2229; border: none;">Empezar Ahora</a>
                 </div>
 
                 <div class="pricing-card enterprise fade-up" style="transition-delay: 0.3s;">
@@ -453,41 +446,38 @@
                     <p class="subtitle">Para casos de uso SaaS y reventa</p>
 
                     <div class="pricing-price">Personalizado</div>
-                    <p class="price-subtitle">Contáctanos para precios</p>
+                    <p class="price-subtitle">Contactar para cotizar</p>
 
                     <ul class="pricing-features">
                         <li><span class="feature-check">&#10003;</span> Todo lo de la Edición Comunitaria</li>
                         <li><span class="feature-check">&#10003;</span> Derechos SaaS multi-inquilino</li>
                         <li><span class="feature-check">&#10003;</span> Redistribución comercial</li>
                         <li><span class="feature-check">&#10003;</span> Soporte prioritario y SLA</li>
-                        <li><span class="feature-check">&#10003;</span> Influencia en la hoja de ruta del producto</li>
-                        <li><span class="feature-check">&#10003;</span> Acceso directo al equipo de desarrollo</li>
+                        <li><span class="feature-check">&#10003;</span> Influencia en el roadmap</li>
+                        <li><span class="feature-check">&#10003;</span> Acceso directo al equipo dev</li>
                     </ul>
 
-                    <a href="#contact" id="btn-contact-sales-es" class="btn btn-primary">Contactar Ventas</a>
+                    <a href="#contact" id="btn-contact-sales" class="btn btn-primary">Contactar Ventas</a>
                 </div>
             </div>
 
             <div class="pricing-grid" id="consulting-content" style="display: none; max-width: 450px;">
                 <div class="pricing-card fade-up visible" style="transition-delay: 0.2s;">
                     <h3>Horas de Consultoría</h3>
-                    <p class="subtitle" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem;">¿Necesitas ayuda para
-                        empezar, diseñar tu arquitectura de procesos o integrar ProcessAce en tu sistema?</p>
+                    <p class="subtitle" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem;">¿Necesitas ayuda para empezar, diseñar tu arquitectura de procesos o integrar ProcessAce en tu stack?</p>
 
                     <ul class="pricing-features">
-                        <li><span class="feature-check">&#10003;</span> Asistencia de incorporación y configuración</li>
+                        <li><span class="feature-check">&#10003;</span> Asistencia en instalación y setup</li>
                         <li><span class="feature-check">&#10003;</span> Desarrollo de integraciones a medida</li>
                         <li><span class="feature-check">&#10003;</span> Consultoría de arquitectura de procesos</li>
-                        <li><span class="feature-check">&#10003;</span> Soporte de infraestructura y despliegue</li>
+                        <li><span class="feature-check">&#10003;</span> Soporte en infraestructura y despliegue</li>
                         <li><span class="feature-check">&#10003;</span> Talleres de formación para tu equipo</li>
-                        <li><span class="feature-check">&#10003;</span> Diseño de Automatización Inteligente de Procesos
-                        </li>
-                        <li><span class="feature-check">&#10003;</span> Desarrollo de Automatización Inteligente de
-                            Procesos</li>
+                        <li><span class="feature-check">&#10003;</span> Diseño de Automatización Inteligente</li>
+                        <li><span class="feature-check">&#10003;</span> Desarrollo de Automatización Inteligente</li>
                     </ul>
 
-                    <a href="#contact" id="btn-book-consultation-es" class="btn btn-primary">
-                        Agendar una Consulta
+                    <a href="#contact" id="btn-book-consultation" class="btn btn-primary">
+                        Agendar Consultoría
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             style="margin-left: 0.25rem;">
@@ -500,36 +490,32 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="container">
             <div class="section-header fade-up">
                 <h2 class="section-title">Ponte en <span class="text-primary">Contacto</span></h2>
-                <p class="section-subtitle">¿Tienes preguntas sobre ProcessAce o necesitas consultoría? Envíanos un
-                    mensaje.</p>
+                <p class="section-subtitle">¿Tienes preguntas sobre ProcessAce o necesitas consultoría? Envíanos un mensaje.</p>
             </div>
 
             <div class="contact-container fade-up" style="transition-delay: 0.1s;">
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
-                    <input type="hidden" name="access_key" value="7e0b9ea7-4418-4a04-8ab3-7b055a2dc82c">
-
+                    <input type="hidden" name="access_key" value="5882df8d-d77c-4841-8582-515fc7459911">
                     <input type="hidden" name="redirect" value="https://processace.com/es/">
 
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required
-                            placeholder="Escribe tu correo electrónico">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="Tu correo">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Mensaje</label>
                         <textarea id="message" name="message" rows="5" required
-                            placeholder="¿Cómo podemos ayudarte?"></textarea>
+                            placeholder="¿En qué podemos ayudarte?"></textarea>
                     </div>
 
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -545,10 +531,10 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="/assets/processace-logo-white.png" width="30" height="30" alt="Logo de ProcessAce">
+                        <img src="/assets/processace-logo-white.png" width="30" height="30" alt="ProcessAce Logo">
                         ProcessAce
                     </a>
-                    <p>Motor de descubrimiento y documentación de procesos, autoalojado y de código disponible.</p>
+                    <p>Motor de descubrimiento y documentación de procesos de código disponible y autohospedado.</p>
                 </div>
 
                 <div>
@@ -556,18 +542,15 @@
                     <div class="footer-links">
                         <a href="https://github.com/jgleiser/processace">Repositorio en GitHub</a>
                         <a href="https://github.com/jgleiser/processace/tree/main/docs">Documentación</a>
-                        <a href="https://github.com/jgleiser/processace/blob/main/docs/api_reference.md">Referencia de
-                            API</a>
+                        <a href="https://github.com/jgleiser/processace/blob/main/docs/api_reference.md">Referencia API</a>
                     </div>
                 </div>
 
                 <div>
                     <h4>Legal y Licencias</h4>
                     <div class="footer-links">
-                        <a href="https://github.com/jgleiser/processace/blob/main/LICENSE.md">Licencia de Uso
-                            Sostenible</a>
-                        <a href="https://github.com/jgleiser/processace/blob/main/COMMERCIAL_LICENSE.md">Licencia
-                            Comercial</a>
+                        <a href="https://github.com/jgleiser/processace/blob/main/LICENSE.md">Licencia de Uso Sostenible</a>
+                        <a href="https://github.com/jgleiser/processace/blob/main/COMMERCIAL_LICENSE.md">Licencia Comercial</a>
                         <a href="https://github.com/jgleiser/processace/blob/main/SECURITY.md">Política de Seguridad</a>
                     </div>
                 </div>
@@ -583,17 +566,20 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle with Accessibility Support
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
         mobileBtn.addEventListener('click', () => {
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
         });
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
+                mobileBtn.setAttribute('aria-expanded', 'false');
                 navLinks.classList.remove('active');
             });
         });
@@ -609,8 +595,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Optional: Stop observing once animated in
-                    // observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
@@ -680,7 +664,6 @@
             }
 
             let currentIndex = 0;
-            // Asegurar que comience desde la imagen activa o la primera
             images.forEach((img, index) => {
                 if (img.classList.contains('active')) {
                     currentIndex = index;
@@ -693,7 +676,7 @@
                     const dot = document.createElement('button');
                     dot.classList.add('preview-dot');
                     if (index === currentIndex) dot.classList.add('active');
-                    dot.setAttribute('aria-label', `Ir a imagen ${index + 1}`);
+                    dot.setAttribute('aria-label', `Ir a la imagen ${index + 1}`);
                     dot.addEventListener('click', () => {
                         changeSlide(currentIndex, index, images);
                         currentIndex = index;
@@ -720,7 +703,7 @@
                     const newIndex = (currentIndex + 1) % images.length;
                     changeSlide(currentIndex, newIndex, images);
                     currentIndex = newIndex;
-                }, 4000); // 4 segundos por imagen
+                }, 4000); // 4 seconds per image
             }
 
             resetInterval();
@@ -759,21 +742,21 @@
         }
 
         // Contact Form Pre-fill Logic (Spanish)
-        const contactSalesBtnEs = document.getElementById('btn-contact-sales-es');
-        const bookConsultationBtnEs = document.getElementById('btn-book-consultation-es');
-        const messageInputEs = document.getElementById('message');
+        const contactSalesBtn = document.getElementById('btn-contact-sales');
+        const bookConsultationBtn = document.getElementById('btn-book-consultation');
+        const messageInput = document.getElementById('message');
 
-        if (contactSalesBtnEs && messageInputEs) {
-            contactSalesBtnEs.addEventListener('click', () => {
-                messageInputEs.value = "Hola, estoy interesado en la Licencia Comercial de ProcessAce para mi organización. ¿Podrían enviarme más información sobre precios, características y opciones de despliegue?";
-                setTimeout(() => messageInputEs.focus(), 600); // Focus after smooth scroll
+        if (contactSalesBtn && messageInput) {
+            contactSalesBtn.addEventListener('click', () => {
+                messageInput.value = "Hola, me interesa la Licencia Comercial de ProcessAce para mi organización. ¿Podrían proporcionar más información sobre precios, características y opciones de despliegue?";
+                setTimeout(() => messageInput.focus(), 600);
             });
         }
 
-        if (bookConsultationBtnEs && messageInputEs) {
-            bookConsultationBtnEs.addEventListener('click', () => {
-                messageInputEs.value = "Hola, me gustaría agendar una consultoría para hablar sobre arquitectura de procesos, automatización inteligente y cómo podríamos integrar ProcessAce en nuestros flujos de trabajo. Quedo atento a su disponibilidad.";
-                setTimeout(() => messageInputEs.focus(), 600); // Focus after smooth scroll
+        if (bookConsultationBtn && messageInput) {
+            bookConsultationBtn.addEventListener('click', () => {
+                messageInput.value = "Hola, me gustaría agendar una consultoría para hablar sobre arquitectura de procesos, automatización inteligente y cómo podríamos integrar ProcessAce en nuestros flujos de trabajo. Por favor, avísenme su disponibilidad.";
+                setTimeout(() => messageInput.focus(), 600);
             });
         }
     </script>
