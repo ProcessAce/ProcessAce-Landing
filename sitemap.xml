@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   
   <url>
     <loc>https://processace.com/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://processace.com/assets/og-image.png</video:thumbnail_loc>
+      <video:title>ProcessAce AI Process Documentation Demo</video:title>
+      <video:description>Discover how ProcessAce transforms process documentation from raw evidence into BPMN 2.0 and SIPOC artifacts using AI.</video:description>
+      <video:content_loc>https://processace.com/assets/videos/ProcessAce_AI_Process_Docs.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
   </url>
 
   <url>
     <loc>https://processace.com/es/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://processace.com/assets/og-image.png</video:thumbnail_loc>
+      <video:title>Demostración de Documentación de Procesos con IA de ProcessAce</video:title>
+      <video:description>Descubre cómo ProcessAce transforma la documentación de procesos utilizando inteligencia artificial.</video:description>
+      <video:content_loc>https://processace.com/assets/videos/ProcessAce_AI_Process_Docs.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
   </url>
 
 </urlset>
